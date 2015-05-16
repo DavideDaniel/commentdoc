@@ -25,7 +25,7 @@ module.exports = {
                 console.log('not replacing :' + lines[i]);
             }
         }
-        console.log(listOfLines);
+        //console.log(listOfLines);
         return listOfLines
     },
     write: function (fileToWrite, filteredText) {
@@ -40,9 +40,10 @@ module.exports = {
         };
     },
     extract: function (fileToRead, newFile) { // params taken as strings
-        var text = this.read(fileToRead);
+        var text = module.exports.read(fileToRead);
         console.log(text);
-        text = this.filter(fileToRead, text);
-        this.write(newFile, text);
+        text = module.exports.filter(fileToRead, text);
+        //console.log(text)
+        module.exports.write(newFile, text);
     }
 }
